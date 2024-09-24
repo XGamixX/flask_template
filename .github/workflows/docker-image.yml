@@ -1,0 +1,36 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    # Log in to GitHub Container Registry (ghcr.io)
+    - name: Log in to GitHub Container Registry
+      run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+    # Build, tag, and push the Docker image
+    - name: Build, tag, and push the Docker image
+      run: |
+        TIMESTAMP=$(date +%s)
+        IMAGE_NAME=flask_server
+        REPO=$(echo ghcr.io/${{ github.repository_owner }} | tr '[:upper:]' '[:lower:]')  # Convert to lowercase
+
+        echo "Building Docker image: $REPO/$NAME:$TIMESTAMP"
+        docker build . --file Dockerfile --tag $REPO/$NAME:$TIMESTAMP
+
+        echo "Tagging image as latest"
+        docker tag $REPO/$NAME:$TIMESTAMP $REPO/$NAME:latest
+
+        echo "Pushing image with timestamp: $TIMESTAMP"
+        docker push $REPO/$NAME:$TIMESTAMP
+
+        echo "Pushing latest image"
+        docker push $REPO/$NAME:latest
