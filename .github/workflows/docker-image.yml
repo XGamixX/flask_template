@@ -23,14 +23,14 @@ jobs:
         IMAGE_NAME=flask_server
         REPO=$(echo ghcr.io/${{ github.repository_owner }} | tr '[:upper:]' '[:lower:]')  # Convert to lowercase
 
-        echo "Building Docker image: $REPO/$NAME:$TIMESTAMP"
-        docker build . --file Dockerfile --tag $REPO/$NAME:$TIMESTAMP
+        echo "Building Docker image: $REPO/$IMAGE_NAME:$TIMESTAMP"
+        docker build . --file Dockerfile --tag $REPO/$IMAGE_NAME:$TIMESTAMP
 
         echo "Tagging image as latest"
-        docker tag $REPO/$NAME:$TIMESTAMP $REPO/$NAME:latest
+        docker tag $REPO/$IMAGE_NAME:$TIMESTAMP $REPO/$IMAGE_NAME:latest
 
         echo "Pushing image with timestamp: $TIMESTAMP"
-        docker push $REPO/$NAME:$TIMESTAMP
+        docker push $REPO/$IMAGE_NAME:$TIMESTAMP
 
         echo "Pushing latest image"
-        docker push $REPO/$NAME:latest
+        docker push $REPO/$IMAGE_NAME:latest
