@@ -21,5 +21,7 @@ def index():
 def ping():
     return flask.jsonify({"status": "ok", "message": "pong"}), 200
 
+### MAIN ###
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
