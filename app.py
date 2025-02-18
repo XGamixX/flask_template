@@ -9,7 +9,13 @@ app = flask.Flask(__name__)
 ### FUNCTIONS AND CLASSES ###
 
 
-### ROUTES ###
+### WEB PAGE ROUTES ###
+
+@app.route('/')
+def index():
+    return flask.render_template("index.html"), 200
+
+### API ROUTES ###
 
 @app.route('/ping')
 def ping():
