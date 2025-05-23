@@ -8,6 +8,20 @@ on:
     branches: [ "main" ]
 
 jobs:
+  syntax-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.13"
+
+      - name: Run syntax check
+        run: python test_syntax.py
+
   build:
     runs-on: ubuntu-latest
     steps:
