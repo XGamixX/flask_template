@@ -1,6 +1,8 @@
 # Flask Template
 
-This is a template for hosting simple web-services using Python Flask in a Docker container
+This is a template for hosting simple web-services using Python Flask in a Docker container.
+
+It comes with Github Actions workflows for syntax test and docker image building.
 
 ## Usage
 
