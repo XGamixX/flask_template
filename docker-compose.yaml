@@ -1,5 +1,5 @@
 services:
-  python_server:
+  flask-template:
     build: .
     restart: always
     ports:

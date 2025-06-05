@@ -34,7 +34,7 @@ jobs:
     # Build, tag, and push the Docker image
     - name: Build, tag, and push the Docker image
       run: |
-        IMAGE_NAME=flask_server
+        IMAGE_NAME=flask-template
 
         TIMESTAMP=$(date +%s)
         REPO=$(echo ghcr.io/${{ github.repository_owner }} | tr '[:upper:]' '[:lower:]')  # Convert to lowercase
