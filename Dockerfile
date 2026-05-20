@@ -1,5 +1,12 @@
 FROM --platform=linux/amd64 python:3.13-slim
 
+ENV TZ=Europe/Berlin
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* && apt-get update && apt-get upgrade -y && \
+    # Insert additional package installations here if needed \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
 WORKDIR /service
 
 COPY app/requirements.txt .
