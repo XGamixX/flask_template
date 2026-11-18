@@ -3,12 +3,17 @@
 > <table>
 >   <tr>
 >     <td align="center">
->       <picture>
->         <source srcset="https://cdn.by-cra.net/static/0rwx.com/AI-R-dark.svg"
->                 media="(prefers-color-scheme: dark)">
->         <img src="https://cdn.by-cra.net/static/0rwx.com/AI-R-light.svg"
->              alt="AI:R (0rwx.com)" height="32">
->       </picture>
+>       <a href="https://0rwx.com" target="_blank" rel="noopener noreferrer"
+>         title="AI:R (0rwx.com)">
+>         <picture>
+>           <source srcset="https://cdn.by-cra.net/static/0rwx.com/AI-R-dark.svg"
+>                   media="(prefers-color-scheme: dark)">
+>           <img src="https://cdn.by-cra.net/static/0rwx.com/AI-R-light.svg"
+>                alt="AI:R (0rwx.com)"
+>                title="AI:R (0rwx.com)"
+>                height="32">
+>         </picture>
+>       </a>
 >     </td>
 >     <td>AI:R Used AI as a learning resource with context</td>
 >   </tr>
