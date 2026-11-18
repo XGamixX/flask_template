@@ -10,7 +10,6 @@
 >                   media="(prefers-color-scheme: dark)">
 >           <img src="https://cdn.by-cra.net/static/0rwx.com/AI-R-light.svg"
 >                alt="AI:R (0rwx.com)"
->                title="AI:R (0rwx.com)"
 >                height="32">
 >         </picture>
 >       </a>
